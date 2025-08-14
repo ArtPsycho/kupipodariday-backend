@@ -16,6 +16,6 @@ export const AppDataSource = new DataSource({
   database: process.env.POSTGRES_DB || 'kupipodariday',
   entities: [User, Wish, Wishlist, Offer],
   migrations: ['src/migrations/*.ts'],
-  synchronize: false,
+  synchronize: true,
   logging: true,
 });

@@ -1,3 +1,4 @@
+import { IsDecimal, IsBoolean, IsNumber } from 'class-validator';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -12,6 +13,7 @@ import { Wish } from '../../../wishes/entities/wish.entity/wish.entity';
 @Entity('offers')
 export class Offer {
   @PrimaryGeneratedColumn()
+  @IsNumber()
   id: number;
 
   @CreateDateColumn()
@@ -27,8 +29,10 @@ export class Offer {
   item: Wish;
 
   @Column({ type: 'decimal', precision: 10, scale: 2 })
+  @IsDecimal()
   amount: number;
 
   @Column({ default: false })
+  @IsBoolean()
   hidden: boolean;
 }

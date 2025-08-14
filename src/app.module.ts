@@ -27,7 +27,7 @@ import { AppService } from './app.service';
       password: process.env.POSTGRES_PASSWORD || 'student',
       database: process.env.POSTGRES_DB || 'kupipodariday',
       entities: [User, Wish, Wishlist, Offer],
-      synchronize: false,
+      synchronize: true,
       logging: true,
       logger: 'advanced-console',
       maxQueryExecutionTime: 1000,
